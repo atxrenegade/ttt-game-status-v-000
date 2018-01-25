@@ -9,10 +9,10 @@ board[WIN_COMBINATIONS].each do |combo|
       return combo
       else
         count += 1
-      end  
+      end
     else
       false
+      end
     end
   end
-
 end
