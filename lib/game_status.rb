@@ -2,8 +2,14 @@ WIN_COMBINATIONS = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],
 
 def won?(board)
 board[WIN_COMBINATIONS].each do |combo|
-    if combo == "X""X""X" || combo == "O""O""O"
+  board[combo].each do |index|
+    count = 0
+    if index == "X" || index == "O"
+      if count = 2
       return combo
+      else
+        count += 1
+      end  
     else
       false
     end
