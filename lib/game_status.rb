@@ -5,7 +5,7 @@ board[WIN_COMBINATIONS].each do |combo|
   count = 0
   board[combo].each do |index|
     if index == "X" || index == "O"
-      if count = 2
+      if count == 2
       return combo
       else
         count += 1
