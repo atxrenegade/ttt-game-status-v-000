@@ -1,10 +1,20 @@
 WIN_COMBINATIONS = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
 
+# helper method to find wins based on character
+def won_var?(board, char = "X")
+  WIN_COMBINATIONS.find do |win_combo|
+    win_combo.all? {|win_index| board[win_index] == char}
+  end # WIN_COMBINATIONS.find do block
+end # def won?
+
+#defining the method #won? that accepts the argument of a boardß
 def won?(board)
-  WIN_COMBINATIONS.detect do |combo|
-    board[combo[0]] == board[combo[1]] && board[combo[1]] == board[combo[2]] && position_taken?(board,combo[0])
+  if won_var?(board, "X") == nil
+    won_var?(board, "O")
+  else
+    won_var?(board, "X")
   end
-end
+end # def won?
 
 def full?(board)
   board.all? {|index| index == "X" || index == "O"}
