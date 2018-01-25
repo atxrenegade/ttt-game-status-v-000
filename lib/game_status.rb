@@ -4,5 +4,9 @@ def won?(board)
   board[WIN_COMBINATIONS].each do |combo|
     puts combo
   end
-end  
+end 
+
+def over?(board)
+  board.all? {|index| index == "X" || index == "O"}
+end    
   
