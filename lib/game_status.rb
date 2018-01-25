@@ -13,6 +13,18 @@ end
 def over?(board)
   if draw == true || won == true
     true
-  else 
-    false  
-end    
+  else
+    false
+end
+
+def winner(board)
+
+end
+
+def draw(board)
+  if over?(board == true) && won?(board) == false
+    return true
+  else
+    false
+  end
+end      
